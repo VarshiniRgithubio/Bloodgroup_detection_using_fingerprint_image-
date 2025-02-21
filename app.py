@@ -55,8 +55,10 @@ if uploaded_file:
     probs = {LABELS[i]: round(pred, 4) for i, pred in enumerate(prediction)}
     st.json(probs)  # Display in structured JSON format
     
-    # Display the final prediction
-    st.subheader("Predicted Class Index:")
-    st.code(predicted_index)
+    # # Display the final prediction
+    # st.subheader("Predicted Class Index:")
+    # st.code(predicted_index)
 
-    st.success(f"Predicted Blood Group: **{predicted_label}** (Confidence: {confidence_score:.2%})")
+    # st.success(f"Predicted Blood Group: **{predicted_label}** (Confidence: {confidence_score:.2%})")
+    clean_label = " ".join(predicted_label.split()[1:])  # Remove the index if present
+    st.success(f"Predicted Blood Group: **{clean_label}** (Confidence: {confidence_score:.2%})")
