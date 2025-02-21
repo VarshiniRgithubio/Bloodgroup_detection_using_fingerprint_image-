@@ -8,7 +8,7 @@ from PIL import Image, ImageOps
 np.set_printoptions(suppress=True)
 
 # File paths
-MODEL_PATH = "Model/keras_Model.h5"
+MODEL_PATH = "Model/keras_model.h5"
 LABELS_PATH = "Model/labels.txt"
 
 # Load the trained Keras model
