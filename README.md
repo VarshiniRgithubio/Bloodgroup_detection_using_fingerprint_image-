@@ -4,7 +4,7 @@ This is a **Streamlit** application for detecting blood groups from fingerprint 
 
 ## 📌 Prerequisites
 Make sure you have the following installed on **Windows**:
-- **Python 3.10+** (Ensure it's added to PATH during installation)
+- **Python 3.10** (Ensure it's added to PATH during installation)
 - **Git** (for cloning the repository)
 - **pip** (comes with Python)
 
@@ -19,7 +19,7 @@ cd blood_group_detection_using_fingerprint_cnn
 
 ### 2️⃣ Create a Virtual Environment (Without Conda)
 ```sh
-python -m venv venv
+python3.10 -m venv venv --copies
 ```
 
 ### 3️⃣ Activate the Virtual Environment
@@ -33,6 +33,28 @@ pip install -r requirements.txt
 ```
 
 ### 5️⃣ Run the Streamlit App
+```sh
+streamlit run app.py
+```
+
+## 💡 Alternative Setup Using Conda
+If you prefer using **Conda**, follow these steps:
+
+### 1️⃣ Open Anaconda Prompt
+Search **Anaconda Prompt** in the start menu and open it.
+
+### 2️⃣ Create and Activate a Conda Environment
+```sh
+conda create --name bloodgroup_env python=3.10 -y
+conda activate bloodgroup_env
+```
+
+### 3️⃣ Install Required Dependencies
+```sh
+pip install -r requirements.txt
+```
+
+### 4️⃣ Run the Streamlit App
 ```sh
 streamlit run app.py
 ```
@@ -53,7 +75,7 @@ streamlit run app.py
   ```sh
   pip install tensorflow
   ```
-- If you face Python version issues, ensure you’re using **Python 3.10+**.
+- If you face Python version issues, ensure you’re using **Python 3.10**.
 
 ## 📜 License
 This project is **open-source**. Feel free to modify and improve it! 🎉
