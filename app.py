@@ -3,7 +3,6 @@ import numpy as np
 # from keras.models import load_model
 from tensorflow.keras.models import load_model
 from PIL import Image, ImageOps
-
 # Disable scientific notation for clarity
 np.set_printoptions(suppress=True)
 
