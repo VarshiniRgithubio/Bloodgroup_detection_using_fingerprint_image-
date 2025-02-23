@@ -63,7 +63,8 @@ if uploaded_file:
         time.sleep(1.5)
     
     image_data = Image.open(uploaded_file).convert("RGB")
-    st.image(image_data, caption="📷 Uploaded Image", use_column_width=True)
+    # st.image(image_data, caption="📷 Uploaded Image", use_column_width=True)
+    st.image(image_data, caption="📷 Uploaded Image",use_container_width=True)
 
     # Resize and preprocess image
     size = (224, 224)
