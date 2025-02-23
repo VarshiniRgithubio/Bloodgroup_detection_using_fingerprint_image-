@@ -7,6 +7,7 @@ Make sure you have the following installed on **Windows**:
 - **Python 3.10** (Ensure it's added to PATH during installation)
 - **Git** (for cloning the repository)
 - **pip** (comes with Python)
+- **Docker** (for containerization, optional)
 
 ## 🚀 Installation & Setup
 Follow these steps to set up and run the project:
@@ -19,7 +20,7 @@ cd blood_group_detection_using_fingerprint_cnn
 
 ### 2️⃣ Create a Virtual Environment (Without Conda)
 ```sh
-python3.10 -m venv venv --copies
+python -m venv venv --copies
 ```
 
 ### 3️⃣ Activate the Virtual Environment
@@ -37,26 +38,23 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
-## 💡 Alternative Setup Using Conda
-If you prefer using **Conda**, follow these steps:
+## 🐳 Docker Setup (Optional)
+If you want to containerize the application using Docker, follow these steps:
 
-### 1️⃣ Open Anaconda Prompt
-Search **Anaconda Prompt** in the start menu and open it.
-
-### 2️⃣ Create and Activate a Conda Environment
+### 1️⃣ Build the Docker Image
 ```sh
-conda create --name bloodgroup_env python=3.10 -y
-conda activate bloodgroup_env
+docker build -t blood-group-app .
 ```
 
-### 3️⃣ Install Required Dependencies
+### 2️⃣ Run the Docker Container
 ```sh
-pip install -r requirements.txt
+docker run -p 8501:8501 blood-group-app
 ```
 
-### 4️⃣ Run the Streamlit App
-```sh
-streamlit run app.py
+### 3️⃣ Access the Application
+Open your browser and go to:
+```
+http://localhost:8501
 ```
 
 ## 📂 Project Structure
@@ -66,6 +64,7 @@ streamlit run app.py
 │   ├── labels.txt       # Labels for classification
 ├── app.py               # Main Streamlit app
 ├── requirements.txt     # List of dependencies
+├── Dockerfile           # Docker container setup
 ├── README.md            # Project documentation
 ```
 
@@ -76,7 +75,10 @@ streamlit run app.py
   pip install tensorflow
   ```
 - If you face Python version issues, ensure you’re using **Python 3.10**.
+- If you encounter issues with Docker, try rebuilding the image:
+  ```sh
+  docker build --no-cache -t blood-group-app .
+  ```
 
 ## 📜 License
 This project is **open-source**. Feel free to modify and improve it! 🎉
-
